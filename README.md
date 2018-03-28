@@ -6,12 +6,13 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 ## contains
 <b>spring-mvc</b> for web applications, RESTful services and SOAP services
 
->Do you want to participate, are going to marry, too, and nevertheless want to learn spring?
->Write me an eMail!
+>Do you are going to marry and nevertheless want to learn spring?
+
+>Do you want to participate? Write me an eMail!
 
 ### resources
-Maven repository (https://mvnrepository.org/)
-Webjars (https://www.webjars.org/)
+- Maven repository (https://mvnrepository.org/)
+- Webjars (https://www.webjars.org/)
 
 ### special thanks to
 - John Thompson, Springframework-Guru (https://springframework.guru)
