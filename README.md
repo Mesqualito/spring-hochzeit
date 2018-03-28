@@ -16,6 +16,7 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 
 ### special thanks to
 - John Thompson, Springframework-Guru (https://springframework.guru)
+- SGD Darmstadt (https://www.sgd.de/kursseite/gepruefter-java-programmiererin-sgd.html)
 - Lydia Schimpf (https://www.video2brain.com/de/videotraining/bootstrap-4-grundlagen u.a.)
 - Christopher Janietz (https://www.video2brain.com/de/videotraining/spring-boot-grundlagen u.a.)
 - Ralph Steyer (https://www.video2brain.com/de/videotraining/java-datenbankprogrammierung u.a.)
