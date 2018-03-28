@@ -23,4 +23,4 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 - Peter M. Müller (https://www.video2brain.com/de/videotraining/html5-fuer-webdesigner u.a.)
 - Christian Wenz (https://www.video2brain.com/de/videotraining/html5-grundkurs u.a.)
 - Carsten Harnisch (https://www.video2brain.com/de/videotraining/nosql-datenbanken-grundkurs u.a.)
-- and all the good authors of all the good books I'm reading when I'm offline (while quite a lot of them are english and technical language...)
+- and all the good authors of all the good books I'm reading when I'm offline (while quite a lot of them are english and technical language (*heavy*...)
