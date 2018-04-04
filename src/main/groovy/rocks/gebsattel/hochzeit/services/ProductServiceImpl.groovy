@@ -3,6 +3,10 @@ package rocks.gebsattel.hochzeit.services
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.Product
 
+// for now: our model class
+// here is the place to get data per jsp, different database-service-classes etc.
+// NO jsp-/database-code in the view-layer or in the controller-layer
+
 // create Spring-Bean and implement ProductServiceImpl as a 'Spring-Service'
 @Service
 class ProductServiceImpl implements ProductService {

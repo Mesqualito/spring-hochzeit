@@ -20,13 +20,14 @@ class ProductController {
 
 
     // Spring Bean 'ProductService' being injected "by Setter"
-    // on method call
+    // on method call; and here "by Type", because 'ProductServiceImpl' is the called class
+    // with its type 'ProductService'
     @Autowired
     void setProductService(ProductService productService) {
         this.productService = productService
     }
 
-    // will be asked by the view dispatcher...
+    // will be asked by the dispatch servlet...
     @RequestMapping("/products")
     String listProducts(Model model){
         //...and will return the data from the model
