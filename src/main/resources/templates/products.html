@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Gebsattel rocks</title>
+    <title>Gebsattel - listing Products</title>
     <meta http-equiv="Content Type" content="text/html; charset=UTF-8"/>
 
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"
@@ -13,13 +13,27 @@
 
     <link href="../static/css/spring-core.css"
           th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
-
 </head>
 <body>
-<div class="container">
-    <h1>Hello World</h1>
 
-    <h2>This is a thymeleaf index page. Real cool!</h2>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(products)}">
+    <h2>Product List</h2>
+    <table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Image URL</th>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.imageUrl}"></td>
+    </tr>
+    </table>
+</div>
 </div>
 
 </body>

@@ -10,12 +10,12 @@ class ProductServiceImpl implements ProductService {
     private Map<Integer, Product> products
 
     ProductServiceImpl(){
-        loadProducts
+        loadProducts()
     }
 
     @Override
     List<Product> listAllProducts() {
-        return new ArrayList<>(products.values())
+        new ArrayList<>(products.values())
     }
 
     private void loadProducts(){
@@ -24,7 +24,7 @@ class ProductServiceImpl implements ProductService {
         Product product1 = new Product()
         product1.setId(1)
         product1.setDescription("Product Nr. 1")
-        product1.setPrice(new BigDecimal("12,01"))
+        product1.setPrice(new BigDecimal("12.01"))
         product1.setImageUrl("http://hochzeit.gebsattel.rocks/product1")
 
         products.put(1, product1)
@@ -33,7 +33,7 @@ class ProductServiceImpl implements ProductService {
         Product product2 = new Product()
         product1.setId(2)
         product1.setDescription("Product Nr. 2")
-        product1.setPrice(new BigDecimal("12,02"))
+        product1.setPrice(new BigDecimal("12.02"))
         product1.setImageUrl("http://hochzeit.gebsattel.rocks/product2")
 
         products.put(2, product2)
@@ -42,7 +42,7 @@ class ProductServiceImpl implements ProductService {
         Product product3 = new Product()
         product1.setId(3)
         product1.setDescription("Product Nr. 3")
-        product1.setPrice(new BigDecimal("12,03"))
+        product1.setPrice(new BigDecimal("12.03"))
         product1.setImageUrl("http://hochzeit.gebsattel.rocks/product3")
 
         products.put(3, product3)
@@ -51,7 +51,7 @@ class ProductServiceImpl implements ProductService {
         Product product4 = new Product()
         product1.setId(4)
         product1.setDescription("Product Nr. 4")
-        product1.setPrice(new BigDecimal("12,04"))
+        product1.setPrice(new BigDecimal("12.04"))
         product1.setImageUrl("http://hochzeit.gebsattel.rocks/product4")
 
         products.put(4, product4)
@@ -60,10 +60,11 @@ class ProductServiceImpl implements ProductService {
         Product product5 = new Product()
         product1.setId(5)
         product1.setDescription("Product Nr. 5")
-        product1.setPrice(new BigDecimal("12,05"))
+        product1.setPrice(new BigDecimal("12.05"))
         product1.setImageUrl("http://hochzeit.gebsattel.rocks/product5")
 
         products.put(5, product5)
+
 
     }
 
