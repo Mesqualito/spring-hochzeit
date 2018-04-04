@@ -25,6 +25,7 @@
         <th>Description</th>
         <th>Price</th>
         <th>Image URL</th>
+        <th>Direct Link</th>
     </tr>
     <tr th:each="product : ${products}">
         <td th:text="${product.id}"></td>
@@ -34,6 +35,7 @@
         <td><a th:href="${'/product/' + product.id}">View</a></td>
     </tr>
     </table>
+        <a th:href="${'/product/new/'}">Add Product</a>
 </div>
 </div>
 
