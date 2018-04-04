@@ -14,6 +14,9 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 - Maven repository (https://mvnrepository.org/)
 - Webjars (https://www.webjars.org/)
 
+### linked projects
+- Learning groovy (https://github.com/Mesqualito/groovy-learning)
+
 ### special thanks to
 - John Thompson, Springframework-Guru (https://springframework.guru)
 - Anjana Mankale ("Mastering spring application development" - Packt Publishing, http://jtechspace.blogspot.in/)
