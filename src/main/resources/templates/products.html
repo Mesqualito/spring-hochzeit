@@ -31,6 +31,7 @@
         <td th:text="${product.description}"></td>
         <td th:text="${product.price}"></td>
         <td th:text="${product.imageUrl}"></td>
+        <td><a th:href="${'/product/' + product.id}">View</a></td>
     </tr>
     </table>
 </div>
