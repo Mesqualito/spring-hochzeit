@@ -39,8 +39,8 @@ class GuestServiceImpl implements GuestService {
 
         Guest guest2 = new Guest()
         guest2.setId("2")
-        guest2.setFamilyName("Martin")
-        guest2.setFirstName("Marquard")
+        guest2.setFamilyName("Marquard")
+        guest2.setFirstName("Martin")
         guest2.setTitle("Herr")
         guest2.seteMail("test@gibtsnet.de")
         guest2.setCode("MaMaxv138")
