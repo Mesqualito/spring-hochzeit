@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Gästeliste</title>
 
-    <meta http-equiv="Content Type" content="text/html; charset=UTF-8"/>
-
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 
     <script src="http://cdn.jsdelivr.net/webjars/jquery/3.3.1-1/jquery.min.js" th:href="@{/webjars/jquery/3.3.1-1/jquery.min.js}">
@@ -32,6 +30,7 @@
                 <th>PLZ</th>
                 <th>Ort</th>
                 <th>Telefonnr.</th>
+                <th>Details</th>
             </tr>
             <tr th:each="guest : ${guests}">
                 <td th:text="${guest.id}"></td>
@@ -46,6 +45,7 @@
                 <td th:text="${guest.zipCode}"></td>
                 <td th:text="${guest.city}"></td>
                 <td th:text="${guest.phoneNr}"></td>
+                <td><a th:href="${'/guest/' + guest.id}">ändern</a></td>
             </tr>
         </table>
     </div>

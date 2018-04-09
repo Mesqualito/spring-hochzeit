@@ -2,7 +2,7 @@ package rocks.gebsattel.hochzeit.domain
 
 class Guest {
 
-    String id
+    Integer id
     String familyName
     String firstName
     String title

@@ -13,8 +13,16 @@ class GuestServiceImpl implements GuestService {
     }
 
     @Override
+    Guest getGuestById(Integer id) {
+        return guests.get(id)
+    }
+
+    @Override
     List<Guest> listAllGuests() {
         return new ArrayList<>(guests.values())
+
+
+
     }
 
     private void loadGuests() {
@@ -22,7 +30,7 @@ class GuestServiceImpl implements GuestService {
         guests = new HashMap<>()
 
         Guest guest1 = new Guest()
-        guest1.setId("1")
+        guest1.setId(1)
         guest1.setFamilyName("Fischer")
         guest1.setFirstName("Robert")
         guest1.setTitle("Herr")
@@ -38,7 +46,7 @@ class GuestServiceImpl implements GuestService {
         guests.put(1, guest1)
 
         Guest guest2 = new Guest()
-        guest2.setId("2")
+        guest2.setId(2)
         guest2.setFamilyName("Marquard")
         guest2.setFirstName("Martin")
         guest2.setTitle("Herr")

@@ -5,4 +5,6 @@ import rocks.gebsattel.hochzeit.domain.Guest
 interface GuestService {
 
     List<Guest> listAllGuests()
+
+    Guest getGuestById(Integer id)
 }
