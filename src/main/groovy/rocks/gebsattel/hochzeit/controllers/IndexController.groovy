@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 
 @Controller
-class indexController {
+class IndexController {
 
     // where should the controller listen?
     @RequestMapping("/")
