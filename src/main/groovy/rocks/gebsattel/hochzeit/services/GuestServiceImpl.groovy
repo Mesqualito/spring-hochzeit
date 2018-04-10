@@ -20,9 +20,23 @@ class GuestServiceImpl implements GuestService {
     @Override
     List<Guest> listAllGuests() {
         return new ArrayList<>(guests.values())
+    }
 
+    @Override
+    Guest saveOrUpdateGuest(Guest guest) {
+        if(guest != null){
+            if(guest.getId() == null){
+                guest.setId(getNextKey())
+            }
+            guests.put(guest.getId(), guest)
+            return guest
+        } else {
+            throw new RuntimeException("Guest can't be null")
+        }
+    }
 
-
+    private Integer getNextKey(){
+        return Collections.max(guests.keySet()) +1
     }
 
     private void loadGuests() {
