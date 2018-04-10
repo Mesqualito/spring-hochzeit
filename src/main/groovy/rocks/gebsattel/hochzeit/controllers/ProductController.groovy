@@ -34,17 +34,13 @@ class ProductController {
     String listProducts(Model model) {
         //...and will return the data from the model
         model.addAttribute("products", productService.listAllProducts())
-
         return "products"
     }
 
     @RequestMapping("/product/{id}")
     String getProducts(@PathVariable Integer id, Model model) {
-
         model.addAttribute("product", productService.getProductById(id))
-
         return "product"
-
     }
 
     @RequestMapping("/product/new")
@@ -52,6 +48,13 @@ class ProductController {
         model.addAttribute("product", new Product())
         return "productform"
     }
+
+    @RequestMapping("/product/edit/{id}")
+    String edit(@PathVariable Integer id, Model model){
+        model.addAttribute("product", productService.getProductById(id))
+        return "productform"
+    }
+
 
     // the RequestMapping, which is the most accurate, will be taken:
     // here e.g. 'http://localhost:8080/product' WITH the request-method of'post'

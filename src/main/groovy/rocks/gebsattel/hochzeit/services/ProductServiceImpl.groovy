@@ -57,37 +57,37 @@ class ProductServiceImpl implements ProductService {
 
 
         Product product2 = new Product()
-        product1.setId(2)
-        product1.setDescription("Product Nr. 2")
-        product1.setPrice(new BigDecimal("12.02"))
-        product1.setImageUrl("http://hochzeit.gebsattel.rocks/product2")
+        product2.setId(2)
+        product2.setDescription("Product Nr. 2")
+        product2.setPrice(new BigDecimal("12.02"))
+        product2.setImageUrl("http://hochzeit.gebsattel.rocks/product2")
 
         products.put(2, product2)
 
 
         Product product3 = new Product()
-        product1.setId(3)
-        product1.setDescription("Product Nr. 3")
-        product1.setPrice(new BigDecimal("12.03"))
-        product1.setImageUrl("http://hochzeit.gebsattel.rocks/product3")
+        product3.setId(3)
+        product3.setDescription("Product Nr. 3")
+        product3.setPrice(new BigDecimal("12.03"))
+        product3.setImageUrl("http://hochzeit.gebsattel.rocks/product3")
 
         products.put(3, product3)
 
 
         Product product4 = new Product()
-        product1.setId(4)
-        product1.setDescription("Product Nr. 4")
-        product1.setPrice(new BigDecimal("12.04"))
-        product1.setImageUrl("http://hochzeit.gebsattel.rocks/product4")
+        product4.setId(4)
+        product4.setDescription("Product Nr. 4")
+        product4.setPrice(new BigDecimal("12.04"))
+        product4.setImageUrl("http://hochzeit.gebsattel.rocks/product4")
 
         products.put(4, product4)
 
 
         Product product5 = new Product()
-        product1.setId(5)
-        product1.setDescription("Product Nr. 5")
-        product1.setPrice(new BigDecimal("12.05"))
-        product1.setImageUrl("http://hochzeit.gebsattel.rocks/product5")
+        product5.setId(5)
+        product5.setDescription("Product Nr. 5")
+        product5.setPrice(new BigDecimal("12.05"))
+        product5.setImageUrl("http://hochzeit.gebsattel.rocks/product5")
 
         products.put(5, product5)
 
