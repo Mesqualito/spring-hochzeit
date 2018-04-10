@@ -31,16 +31,27 @@ class GuestController {
         return "guest"
     }
 
+    @RequestMapping("/guest/edit/{id}")
+    String edit(@PathVariable Integer id, Model model){
+        model.addAttribute("guest", guestService.getGuestById(id) )
+        return "guesteditform"
+    }
+
     @RequestMapping("/guest/new")
     String newGuest(Model model) {
         model.addAttribute("guest", new Guest())
-        return "guestform"
+        return "guestsaveform"
     }
 
     @RequestMapping(value = "/guest", method = RequestMethod.POST)
-    String saveOrUpdateGuest(Guest guest) {
-        Guest savedGuest = guestService.saveOrUpdateGuest(guest)
-        return "redirect:/guest/" + savedGuest.id
+    String saveGuest(Guest guest) {
+        Guest savedGuest = guestService.saveGuest(guest)
+        return "redirect:/guest/" + savedGuest.getId()
     }
 
+    @RequestMapping("/guest/delete/{id}")
+    String delete(@PathVariable Integer id){
+        guestService.deleteGuest(id)
+        return "redirect:/guests"
+    }
 }

@@ -31,6 +31,8 @@
                 <th>Ort</th>
                 <th>Telefonnr.</th>
                 <th>Details</th>
+                <th>Korrektur</th>
+                <th>Löschen</th>
             </tr>
             <tr th:each="guest : ${guests}">
                 <td th:text="${guest.id}"></td>
@@ -45,12 +47,14 @@
                 <td th:text="${guest.zipCode}"></td>
                 <td th:text="${guest.city}"></td>
                 <td th:text="${guest.phoneNr}"></td>
-                <td><a th:href="${'/guest/' + guest.id}">ändern</a></td>
+                <td><a th:href="${'/guest/' + guest.id}">anzeigen</a></td>
+                <td><a th:href="${'/guest/edit/' + guest.id}">ändern</a></td>
+                <td><a th:href="${'/guest/delete/' + guest.id}">löschen</a></td>
             </tr>
         </table>
     </div>
     <div class="row">
-        <a href="/guest/new">Neuen Gast vorschlagen</a>
+        <a href="/guest/new">Neuen Gast anlegen</a>
     </div>
 </div>
 

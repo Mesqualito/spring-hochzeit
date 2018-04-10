@@ -6,9 +6,9 @@ import rocks.gebsattel.hochzeit.domain.Guest
 @Service
 class GuestServiceImpl implements GuestService {
 
-    private Map<Integer,Guest> guests
+    private Map<Integer, Guest> guests
 
-    GuestServiceImpl(){
+    GuestServiceImpl() {
         loadGuests()
     }
 
@@ -23,9 +23,9 @@ class GuestServiceImpl implements GuestService {
     }
 
     @Override
-    Guest saveOrUpdateGuest(Guest guest) {
-        if(guest != null){
-            if(guest.getId() == null){
+    Guest saveGuest(Guest guest) {
+        if (guest != null) {
+            if (guest.getId() == null) {
                 guest.setId(getNextKey())
             }
             guests.put(guest.getId(), guest)
@@ -35,8 +35,23 @@ class GuestServiceImpl implements GuestService {
         }
     }
 
-    private Integer getNextKey(){
-        return Collections.max(guests.keySet()) +1
+    @Override
+    Guest updateGuest(Guest guest) {
+        return saveGuest(guest)
+    }
+
+    @Override
+    Guest proposeGuest(Guest guest) {
+        return null
+    }
+
+    @Override
+    void deleteGuest(Integer id) {
+        guests.remove(id)
+    }
+
+    private Integer getNextKey() {
+        return Collections.max(guests.keySet()) + 1
     }
 
     private void loadGuests() {
@@ -74,7 +89,6 @@ class GuestServiceImpl implements GuestService {
         guest2.setPhoneNr("09381-123456")
 
         guests.put(2, guest2)
-
 
 
     }

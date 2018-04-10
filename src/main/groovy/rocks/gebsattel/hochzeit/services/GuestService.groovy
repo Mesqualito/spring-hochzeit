@@ -8,5 +8,12 @@ interface GuestService {
 
     Guest getGuestById(Integer id)
 
-    Guest saveOrUpdateGuest(Guest guest)
+    Guest saveGuest(Guest guest)
+
+    Guest updateGuest(Guest guest)
+
+    Guest proposeGuest(Guest guest)
+
+    void deleteGuest(Integer id)
+
 }
