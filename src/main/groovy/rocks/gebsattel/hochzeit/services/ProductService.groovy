@@ -2,14 +2,6 @@ package rocks.gebsattel.hochzeit.services
 
 import rocks.gebsattel.hochzeit.domain.Product
 
-interface ProductService {
-
-    List<Product> listAllProducts()
-
-    Product getProductById(Integer id)
-
-    Product saveOrUpdateProduct(Product product)
-
-    void deleteProduct(Integer id)
+interface ProductService extends CRUDService<Product> {
 
 }

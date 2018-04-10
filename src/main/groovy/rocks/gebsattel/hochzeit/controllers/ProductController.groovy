@@ -17,6 +17,7 @@ import rocks.gebsattel.hochzeit.services.ProductService
 
 // Spring Bean notice: here is a Controller Class for your projects spring framework
 @Controller
+@RequestMapping("/product")
 class ProductController {
 
     private ProductService productService
@@ -30,52 +31,40 @@ class ProductController {
     }
 
     // will be asked by the dispatch servlet...
-    @RequestMapping("/products")
+    @RequestMapping( {"/list","/"} )
     String listProducts(Model model) {
         //...and will return the data from the model
-        model.addAttribute("products", productService.listAllProducts())
-        return "products"
+        model.addAttribute("products", productService.listAll())
+        return "product/list"
     }
 
     @RequestMapping("/product/{id}")
     String getProducts(@PathVariable Integer id, Model model) {
-        model.addAttribute("product", productService.getProductById(id))
-        return "product"
+        model.addAttribute("product", productService.getById(id))
+        return "product/show"
     }
 
     @RequestMapping("/product/new")
     String newProduct(Model model) {
         model.addAttribute("product", new Product())
-        return "productform"
+        return "product/productform"
     }
 
     @RequestMapping("/product/edit/{id}")
     String edit(@PathVariable Integer id, Model model){
-        model.addAttribute("product", productService.getProductById(id))
-        return "productform"
+        model.addAttribute("product", productService.getById(id))
+        return "product/productform"
     }
-
-
-    // the RequestMapping, which is the most accurate, will be taken:
-    // here e.g. 'http://localhost:8080/product' WITH the request-method of'post'
-    // ******************************
-    // the request comes in and spring is going to bind the form parameters
-    // to our product properties dynamically
-    // the property-names in the 'productform'-template have to match
-    // everything what is on our 'Product'
-    // then the data is passed to the controller-method.
-    // The controller calls the ProductService and save it.
-    // The controller passes back the 'Product'-Object, so we can read the 'id'
 
     @RequestMapping(value = "/product", method = RequestMethod.POST)
     String saveOrUpdateProduct(Product Product) {
-        Product savedProduct = productService.saveOrUpdateProduct(Product)
-        return "redirect:/product/" + savedProduct.getId()
+        Product savedProduct = productService.saveOrUpdate(Product)
+        return "redirect:/product/list" + savedProduct.getId()
     }
 
     @RequestMapping("/product/delete/{id}")
     String delete(@PathVariable Integer id) {
-        productService.deleteProduct(id)
+        productService.delete(id)
         return "redirect:/products"
     }
 }
