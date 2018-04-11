@@ -20,7 +20,7 @@ class CustomerController {
         this.customerService = customerService
     }
 
-    @RequestMapping( {"/list", "/"} )
+    @RequestMapping( ["/list", "/"] )
     String listCustomers(Model model){
         model.addAttribute("customers", customerService.listAll())
         return "customer/list"
@@ -52,7 +52,7 @@ class CustomerController {
 
     @RequestMapping("/delete/{id}")
     String delete(@PathVariable Integer id){
-        customerService-delete(id)
+        customerService.delete(id)
         return "redirect:/customer/list"
     }
 }

@@ -1,26 +1,20 @@
 package rocks.gebsattel.hochzeit.services
 
-import groovy.transform.InheritConstructors
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.Customer
 import rocks.gebsattel.hochzeit.domain.DomainObject
 
-@InheritConstructors
 @Service
 class CustomerServiceImpl extends AbstractMapService implements CustomerService {
 
-    CustomerServiceImpl(){
-        super()
-    }
+    @Override
+    List<DomainObject> listAll(){ super.listAll() }
 
     @Override
-    List<DomainObject> listAll(){ return super.listAll() }
+    Customer getById(Integer id){ (Customer) super.getById(id) }
 
     @Override
-    Customer getById(Integer id){ return (Customer) super.getById(id) }
-
-    @Override
-    Customer saveOrUpdate(Customer domainObject) { return (Customer) super.saveOrUpdate(domainObject) }
+    Customer saveOrUpdate(Customer domainObject) { (Customer) super.saveOrUpdate(domainObject) }
 
     @Override
     void delete(Integer id){ super.delete(id) }
@@ -69,5 +63,8 @@ class CustomerServiceImpl extends AbstractMapService implements CustomerService 
         customer3.setPhoneNr("0911/983461")
 
         domainMap.put(3, customer3)
+
+        assert domainMap.size() == 3
+        println "\'domainMap.size()' (Customer) = ${domainMap.size()}"
     }
 }

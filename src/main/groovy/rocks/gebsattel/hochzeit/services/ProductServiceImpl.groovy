@@ -1,31 +1,23 @@
 package rocks.gebsattel.hochzeit.services
 
-import groovy.transform.InheritConstructors
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.DomainObject
 import rocks.gebsattel.hochzeit.domain.Product
 
-@InheritConstructors
 @Service
 class ProductServiceImpl extends AbstractMapService implements ProductService {
 
-    ProductServiceImpl(){
-        super()
-    }
+    @Override
+    List<DomainObject> listAll() { super.listAll() }
 
     @Override
-    List<DomainObject> listAll() { return super.listAll() }
+    Product getById(Integer id) { (Product) super.getById(id) }
 
     @Override
-    Product getById(Integer id) { return (Product) super.getById(id) }
-
-    @Override
-    Product saveOrUpdate(Product domainObject) { return (Product) super.saveOrUpdate(domainObject) }
+    Product saveOrUpdate(Product domainObject) { (Product) super.saveOrUpdate(domainObject) }
 
     @Override
     void delete(Integer id) { super.delete(id) }
-
-    private Integer getNextKey() { return Collections.max(products.keySet()) + 1 }
 
     @Override
     protected void loadDomainObjects() {
@@ -70,6 +62,9 @@ class ProductServiceImpl extends AbstractMapService implements ProductService {
         product5.setImageUrl("http://hochzeit.gebsattel.rocks/product5")
 
         domainMap.put(5, product5)
+
+        assert domainMap.size() == 5
+        println "\'domainMap.size()' (Products) = ${domainMap.size()}"
    }
 
 }

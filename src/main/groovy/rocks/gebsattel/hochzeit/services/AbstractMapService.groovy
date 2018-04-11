@@ -11,13 +11,9 @@ abstract class AbstractMapService {
         loadDomainObjects()
     }
 
-    List<DomainObject> listAll() {
-        return new ArrayList<>(domainMap.values())
-    }
+    List<DomainObject> listAll() { new ArrayList<>(domainMap.values()) }
 
-    DomainObject getById(Integer id) {
-        return domainMap.get(id)
-    }
+    DomainObject getById(Integer id) { domainMap.get(id) }
 
     DomainObject saveOrUpdate(DomainObject domainObject) {
         if(domainObject != null){
@@ -31,13 +27,9 @@ abstract class AbstractMapService {
         }
     }
 
-    void delete(Integer id) {
-        domainMap.remove(id)
-         }
+    void delete(Integer id) { domainMap.remove(id) }
 
-    private Integer getNextKey(){
-        return Collections.max(domainMap.keySet()) + 1
-    }
+    private Integer getNextKey(){ domainMap.max { it.key }.key + 1  }
 
     protected abstract void loadDomainObjects()
 
