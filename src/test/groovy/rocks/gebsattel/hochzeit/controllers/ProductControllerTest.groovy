@@ -9,7 +9,6 @@ import rocks.gebsattel.hochzeit.domain.Product
 import rocks.gebsattel.hochzeit.services.ProductService
 
 import static org.hamcrest.Matchers.*
-import static org.junit.Assert.assertEquals
 import static org.mockito.Mockito.*
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
@@ -79,7 +78,7 @@ class ProductControllerTest {
     void testNew() throws Exception {
         Integer id = 1
 
-        // should not call service!
+        // testing: should not call service
         verifyZeroInteractions(productService)
 
         mockMvc.perform(get("/product/new"))
@@ -114,27 +113,29 @@ class ProductControllerTest {
                 .andExpect(model().attribute("product", hasProperty("id", is(id))))
                 .andExpect(model().attribute("product", hasProperty("description", is(description))))
                 .andExpect(model().attribute("product", hasProperty("price", is(price))))
-                .andExpect(model().attribute("product", hasProperty("imageUrl", is(imageUrl))));
+                .andExpect(model().attribute("product", hasProperty("imageUrl", is(imageUrl))))
 
         //verify properties of bound object
-        ArgumentCaptor<Product> boundProduct = ArgumentCaptor.forClass(Product.class);
-        verify(productService).saveOrUpdate(boundProduct.capture());
+        ArgumentCaptor<Product> productCaptor = ArgumentCaptor.forClass(Product.class)
+        verify(productService).saveOrUpdate(productCaptor.capture());
 
-        assertEquals(id, boundProduct.getValue().getId());
-        assertEquals(description, boundProduct.getValue().getDescription());
-        assertEquals(price, boundProduct.getValue().getPrice());
-        assertEquals(imageUrl, boundProduct.getValue().getImageUrl());
+        Product boundProduct = productCaptor.getValue()
+
+        assert id == boundProduct.id
+        assert description == boundProduct.description
+        assert price == boundProduct.price
+        assert imageUrl == boundProduct.imageUrl
     }
 
     @Test
     void testDelete() throws Exception {
-        Integer id = 1;
+        Integer id = 1
 
         mockMvc.perform(get("/product/delete/1"))
                 .andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:/product/list"));
+                .andExpect(view().name("redirect:/product/list"))
 
-        verify(productService, times(1)).delete(id);
+        verify(productService, times(1)).delete(id)
     }
 
 }
