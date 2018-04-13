@@ -11,7 +11,7 @@ import rocks.gebsattel.hochzeit.domain.Product
 @RunWith(SpringJUnit4ClassRunner)
 @SpringBootTest("JpaIntegrationConfig")
 @ActiveProfiles("jpadao") // keep test independent from application's "application properties"!
-class ProductServiceJapDaoImplTest {
+class ProductServiceJpaDaoImplTest {
 
     private ProductService productService
 

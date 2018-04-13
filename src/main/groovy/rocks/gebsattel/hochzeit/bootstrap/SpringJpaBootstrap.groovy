@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationListener
 import org.springframework.context.event.ContextRefreshedEvent
 import org.springframework.stereotype.Component
+import rocks.gebsattel.hochzeit.domain.Customer
 import rocks.gebsattel.hochzeit.domain.Product
+import rocks.gebsattel.hochzeit.services.CustomerService
 import rocks.gebsattel.hochzeit.services.ProductService
 
 // "Pull yourself up by your bootstraps" - what you do in the morning of the old days...
@@ -13,15 +15,60 @@ import rocks.gebsattel.hochzeit.services.ProductService
 class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private ProductService productService
+    private CustomerService customerService
 
     @Autowired
     void setProductService(ProductService productService) {
         this.productService = productService
     }
 
+    @Autowired
+    void setCustomerService(CustomerService customerService) {
+        this.customerService = customerService
+    }
+
     @Override
     void onApplicationEvent(ContextRefreshedEvent event) {
+        loadCustomers()
         loadProducts()
+    }
+
+    void loadCustomers() {
+
+        Customer customer1 = new Customer()
+        customer1.setFirstName("Hannes")
+        customer1.setLastName("Burgermeister")
+        customer1.setAddressLine1("Teststr. 1")
+        customer1.setCity("München")
+        customer1.setState("Bayern")
+        customer1.setZipCode("28271")
+        customer1.seteMail("wunder@pastillen.com")
+        customer1.setPhoneNr("089/433284323-21")
+        customerService.saveOrUpdate(customer1)
+
+        Customer customer2 = new Customer()
+        customer2.setFirstName("Robert")
+        customer2.setLastName("Müller")
+        customer2.setAddressLine1("Am Ampelchen 4")
+        customer2.setAddressLine2("Untergeschoß")
+        customer2.setCity("Habsburg")
+        customer2.setState("Ruhnewald")
+        customer2.setZipCode("98111")
+        customer2.seteMail("r.mueller@gmx.me")
+        customer2.setPhoneNr("09383/123-456 78")
+        customerService.saveOrUpdate(customer2)
+
+        Customer customer3 = new Customer()
+        customer3.setFirstName("Aldi")
+        customer3.setLastName("Wachau")
+        customer3.setAddressLine1("Landstr. 27")
+        customer3.setAddressLine2("Kellereingang")
+        customer3.setCity("Nürnberg")
+        customer3.setState("Unterfranken")
+        customer3.setZipCode("90931")
+        customer3.seteMail("aldi@wachau.rocks")
+        customer3.setPhoneNr("0911/983461")
+        customerService.saveOrUpdate(customer3)
     }
 
     void loadProducts() {

@@ -1,10 +1,12 @@
 package rocks.gebsattel.hochzeit.services
 
+import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.Customer
 import rocks.gebsattel.hochzeit.domain.DomainObject
 
 @Service
+@Profile("map")
 class CustomerServiceImpl extends AbstractMapService implements CustomerService {
 
     @Override
