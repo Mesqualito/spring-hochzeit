@@ -1,12 +1,12 @@
 package rocks.gebsattel.hochzeit.controllers
 
-import rocks.gebsattel.hochzeit.domain.Customer
-import rocks.gebsattel.hochzeit.services.CustomerService
 import org.junit.Before
 import org.junit.Test
 import org.mockito.*
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
+import rocks.gebsattel.hochzeit.domain.Customer
+import rocks.gebsattel.hochzeit.services.CustomerService
 
 import static org.hamcrest.Matchers.*
 import static org.mockito.Mockito.*

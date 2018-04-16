@@ -1,22 +1,23 @@
-package rocks.gebsattel.hochzeit.services
+package rocks.gebsattel.hochzeit.services.jpaservices
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.Customer
+import rocks.gebsattel.hochzeit.services.CustomerService
+import rocks.gebsattel.hochzeit.services.security.EncryptionService
 
 import javax.persistence.EntityManager
-import javax.persistence.EntityManagerFactory
-import javax.persistence.PersistenceUnit
 
 @Service
 @Profile("jpadao")
-class CustomerServiceJpaDaoImpl implements CustomerService {
+class CustomerServiceJpaDaoImpl extends AbstractJpaDaoService implements CustomerService {
 
-    private EntityManagerFactory emf
+    private EncryptionService encryptionService
 
-    @PersistenceUnit
-    void setEmf(EntityManagerFactory emf) {
-        this.emf = emf
+    @Autowired
+    void setEncryptionService(EncryptionService encryptionService){
+        this.encryptionService = encryptionService
     }
 
     @Override
@@ -35,9 +36,15 @@ class CustomerServiceJpaDaoImpl implements CustomerService {
     Customer saveOrUpdate(Customer domainObject) {
         EntityManager em = emf.createEntityManager()
         em.getTransaction().begin()
+
+        if (domainObject.getUser() != null && domainObject.getUser().getPassword() != null ) {
+            domainObject.getUser().setEncryptedPassword(encryptionService.encryptString(domainObject.getUser().getPassword()))
+        }
+
         Customer savedCustomer = em.merge(domainObject)
         em.getTransaction().commit()
         return savedCustomer
+
     }
 
     @Override

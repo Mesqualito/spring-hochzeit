@@ -31,5 +31,7 @@ dependencies {
     compile group: 'org.webjars', name: 'bootstrap'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
     compile group: 'com.h2database', name: 'h2'
+    // https://mvnrepository.com/artifact/org.jasypt/jasypt
+    compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }

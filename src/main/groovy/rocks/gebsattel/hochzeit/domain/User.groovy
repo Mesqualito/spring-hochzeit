@@ -3,7 +3,7 @@ package rocks.gebsattel.hochzeit.domain
 import javax.persistence.*
 
 @Entity
-class Customer implements DomainObject {
+class User implements DomainObject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,18 +12,13 @@ class Customer implements DomainObject {
     @Version
     Integer version
 
-    String firstName
-    String lastName
-    String eMail
-    String phoneNr
-    String addressLine1
-    String addressLine2
-    String city
-    String state
-    String zipCode
+    String username
 
-    @OneToOne(cascade = CascadeType.ALL)
-    User user
+    @Transient // temporary in state; not stored to the database
+    String password
+
+    String encryptedPassword
+    Boolean enabled = true
 
     @Override
     Integer getId() {

@@ -1,30 +1,18 @@
-package rocks.gebsattel.hochzeit.services
+package rocks.gebsattel.hochzeit.services.jpaservices
 
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
 import rocks.gebsattel.hochzeit.domain.Product
+import rocks.gebsattel.hochzeit.services.ProductService
 
 import javax.persistence.EntityManager
-import javax.persistence.EntityManagerFactory
-import javax.persistence.PersistenceUnit
 
 @Service
 @Profile("jpadao")
-class ProductServiceJpaDaoImpl implements ProductService {
-
-    private EntityManagerFactory emf
-
-    @PersistenceUnit
-    void setEmf(EntityManagerFactory emf) {
-        this.emf = emf
-    }
-
-    // queries: no transaction
+class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductService {
 
     @Override
     List<Product> listAll() {
-        // EntityManagerFactory is threadsafe,
-        // but the EntityManager is not!!
         EntityManager em = emf.createEntityManager()
         em.createQuery("FROM Product", Product.class).getResultList()
     }
@@ -34,8 +22,6 @@ class ProductServiceJpaDaoImpl implements ProductService {
         EntityManager em = emf.createEntityManager()
         em.find(Product.class, id)
     }
-
-    // here transaction counts!
 
     @Override
     Product saveOrUpdate(Product domainObject) {
