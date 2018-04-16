@@ -20,6 +20,11 @@ class User implements DomainObject {
     String encryptedPassword
     Boolean enabled = true
 
+    // Bi-directional One-to-One-Relationship User <-> Customer
+    // database-Updates/Deletes driven primarily from the User-Object
+    @OneToOne(cascade = [CascadeType.MERGE, CascadeType.PERSIST])
+    Customer customer
+
     @Override
     Integer getId() {
         return id
@@ -28,5 +33,10 @@ class User implements DomainObject {
     @Override
     void setId(Integer id) {
         this.id = id
+    }
+
+    void setCustomer(Customer customer){
+        this.customer = customer
+        customer.setUser(this)
     }
 }

@@ -22,7 +22,10 @@ class Customer implements DomainObject {
     String state
     String zipCode
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    // @OneToOne(cascade = CascadeType.ALL) // only if deletion of Customer should walk through and delete User also
+    // database-Updates/Deletes driven primarily from the User-Object
+    @OneToOne
     User user
 
     @Override
