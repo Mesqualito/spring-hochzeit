@@ -112,11 +112,11 @@ class CustomerControllerTest {
         .param("id", "1")
         .param("firstName", firstName)
         .param("lastName", lastName)
-        .param("addressLine1", addressLine1)
-        .param("addressLine2", addressLine2)
-        .param("city", city)
-        .param("state", state)
-        .param("zipCode", zipCode)
+        .param("shippingAddress.addressLine1", addressLine1)
+        .param("shippingAddress.addressLine2", addressLine2)
+        .param("shippingAddress.city", city)
+        .param("shippingAddress.state", state)
+        .param("shippingAddress.zipCode", zipCode)
         .param("eMail", eMail)
         .param("phoneNr", phoneNr))
         .andExpect(status().is3xxRedirection())
@@ -124,11 +124,11 @@ class CustomerControllerTest {
         .andExpect(model().attribute("customer", instanceOf(Customer.class)))
         .andExpect(model().attribute("customer", hasProperty("firstName", is(firstName))))
                 .andExpect(model().attribute("customer", hasProperty("lastName", is(lastName))))
-                .andExpect(model().attribute("customer", hasProperty("addressLine1", is(addressLine1))))
-                .andExpect(model().attribute("customer", hasProperty("addressLine2", is(addressLine2))))
-                .andExpect(model().attribute("customer", hasProperty("city", is(city))))
-                .andExpect(model().attribute("customer", hasProperty("state", is(state))))
-                .andExpect(model().attribute("customer", hasProperty("zipCode", is(zipCode))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine1", is(addressLine1))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine2", is(addressLine2))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("city", is(city))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("state", is(state))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("zipCode", is(zipCode))))
                 .andExpect(model().attribute("customer", hasProperty("eMail", is(eMail))))
                 .andExpect(model().attribute("customer", hasProperty("phoneNr", is(phoneNr))))
 
@@ -140,11 +140,11 @@ class CustomerControllerTest {
         assert id == boundCustomer.id
         assert firstName == boundCustomer.firstName
         assert lastName == boundCustomer.lastName
-        assert addressLine1 == boundCustomer.addressLine1
-        assert addressLine2 == boundCustomer.addressLine2
-        assert city == boundCustomer.city
-        assert state == boundCustomer.state
-        assert zipCode == boundCustomer.zipCode
+        assert addressLine1 == boundCustomer.getShippingAddress().getAddressLine1()
+        assert addressLine2 == boundCustomer.getShippingAddress().getAddressLine2()
+        assert city == boundCustomer.getShippingAddress().getCity()
+        assert state == boundCustomer.getShippingAddress().getState()
+        assert zipCode == boundCustomer.getShippingAddress().getZipCode()
         assert eMail == boundCustomer.eMail
         assert phoneNr == boundCustomer.phoneNr
     }
