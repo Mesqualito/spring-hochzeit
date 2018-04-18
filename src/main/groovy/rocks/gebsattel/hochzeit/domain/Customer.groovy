@@ -16,12 +16,12 @@ class Customer implements DomainObject {
     String lastName
     String eMail
     String phoneNr
-    String addressLine1
-    String addressLine2
-    String city
-    String state
-    String zipCode
 
+    @Embedded
+    Address billingAddress
+
+    @Embedded
+    Address shippingAddress
 
     // @OneToOne(cascade = CascadeType.ALL) // only if deletion of Customer should walk through and delete User also
     // database-Updates/Deletes driven primarily from the User-Object
