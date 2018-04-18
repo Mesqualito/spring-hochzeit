@@ -7,6 +7,7 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import rocks.gebsattel.hochzeit.domain.Product
 import rocks.gebsattel.hochzeit.services.ProductService
+import rocks.gebsattel.hochzeit.controllers.ProductController
 
 import static org.hamcrest.Matchers.*
 import static org.mockito.Mockito.*

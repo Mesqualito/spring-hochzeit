@@ -25,6 +25,10 @@ class User implements DomainObject {
     @OneToOne(cascade = [CascadeType.MERGE, CascadeType.PERSIST])
     Customer customer
 
+    // cart-Entity get deleted if user will be deleted, and also orphans
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    Cart cart
+
     @Override
     Integer getId() {
         return id

@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.RELEASE'
+		springBootVersion = '2.0.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -10,8 +10,8 @@ buildscript {
 	}
 }
 
-apply plugin: 'groovy'
 apply plugin: 'idea'
+apply plugin: 'groovy'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -28,10 +28,14 @@ dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-    compile group: 'org.webjars', name: 'bootstrap'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    // https://mvnrepository.com/artifact/org.webjars/bootstrap
+    compile group: 'org.webjars', name: 'bootstrap', version: '4.0.0-2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
     compile group: 'com.h2database', name: 'h2'
     // https://mvnrepository.com/artifact/org.jasypt/jasypt
     compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/junit/junit
+	// testCompile group: 'junit', name: 'junit', version: '4.12'
+
 }
