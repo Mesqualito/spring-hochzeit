@@ -3,14 +3,7 @@ package rocks.gebsattel.hochzeit.domain
 import javax.persistence.*
 
 @Entity
-class Customer implements DomainObject {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id
-
-    @Version
-    Integer version
+class Customer extends AbstractDomainClass implements DomainObject {
 
     String firstName
     String lastName
@@ -27,14 +20,4 @@ class Customer implements DomainObject {
     // database-Updates/Deletes driven primarily from the User-Object
     @OneToOne
     User user
-
-    @Override
-    Integer getId() {
-        return id
-    }
-
-    @Override
-    void setId(Integer id) {
-        this.id = id
-    }
 }

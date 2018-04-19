@@ -3,14 +3,7 @@ package rocks.gebsattel.hochzeit.domain
 import javax.persistence.*
 
 @Entity
-class User implements DomainObject {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id
-
-    @Version
-    Integer version
+class User extends AbstractDomainClass implements DomainObject {
 
     String username
 
@@ -28,16 +21,6 @@ class User implements DomainObject {
     // cart-Entity get deleted if user will be deleted, and also orphans
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     Cart cart
-
-    @Override
-    Integer getId() {
-        return id
-    }
-
-    @Override
-    void setId(Integer id) {
-        this.id = id
-    }
 
     void setCustomer(Customer customer){
         this.customer = customer

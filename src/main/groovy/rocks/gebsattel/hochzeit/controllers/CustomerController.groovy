@@ -44,7 +44,7 @@ class CustomerController {
         return "customer/customerform"
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     String saveOrUpdate(Customer customer){
         Customer newCustomer  = customerService.saveOrUpdate(customer)
         return "redirect:/customer/show/" + newCustomer.getId()

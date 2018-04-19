@@ -5,22 +5,35 @@ import org.springframework.context.ApplicationListener
 import org.springframework.context.event.ContextRefreshedEvent
 import org.springframework.stereotype.Component
 import rocks.gebsattel.hochzeit.domain.Address
+import rocks.gebsattel.hochzeit.domain.Cart
+import rocks.gebsattel.hochzeit.domain.CartDetail
 import rocks.gebsattel.hochzeit.domain.Customer
+import rocks.gebsattel.hochzeit.domain.Order
+import rocks.gebsattel.hochzeit.domain.OrderDetail
 import rocks.gebsattel.hochzeit.domain.Product
+import rocks.gebsattel.hochzeit.domain.User
+import rocks.gebsattel.hochzeit.enums.OrderStatus
 import rocks.gebsattel.hochzeit.services.CustomerService
 import rocks.gebsattel.hochzeit.services.ProductService
+import rocks.gebsattel.hochzeit.services.UserService
 
 // "Pull yourself up by your bootstraps" - what you do in the morning of the old days...
 
 @Component
 class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
-    private ProductService productService
-    private CustomerService customerService
+    ProductService productService
+    UserService userService
+    CustomerService customerService
 
     @Autowired
     void setProductService(ProductService productService) {
         this.productService = productService
+    }
+
+    @Autowired
+    void setUserService(UserService userService) {
+        this.userService = userService
     }
 
     @Autowired
@@ -30,11 +43,49 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     void onApplicationEvent(ContextRefreshedEvent event) {
-        loadCustomers()
         loadProducts()
+        loadUsersAndCustomers()
+        loadCarts()
+        loadOrderHistory()
     }
 
-    void loadCustomers() {
+    private void loadOrderHistory(){
+        List<User> users = (List<User>) userService.listAll()
+        List<Product> products = (List<Product>) productService.listAll()
+
+        users.each { user ->
+            Order order = new Order()
+            order.setCustomer(user.getCustomer())
+            order.setOrderStatus(OrderStatus.SHIPPED)
+        }
+
+        products.each { product ->
+            OrderDetail orderDetail = new OrderDetail()
+            orderDetail.setProduct(product)
+            orderDetail.setQuantity(1)
+            order.addToOrderDetails(orderDetail)
+        }
+    }
+
+    private void loadCarts(){
+        List<User> users = (List<User>) userService.listAll()
+        List<Product> products = (List<Product>) productService.listAll()
+
+        users.each { user ->
+            user.setCart(new Cart())
+            CartDetail cartDetail = new CartDetail()
+            cartDetail.setProduct(products.get(0))
+            cartDetail.setQuantity(2)
+            user.getCart().addCartDetail(cartDetail)
+            userService.saveOrUpdate(user)
+        }
+    }
+
+    void loadUsersAndCustomers(){
+
+        User user1 = new User()
+        user1.setUsername("PreConfig1_User")
+        user1.setPassword("testpassword")
 
         Customer customer1 = new Customer()
         customer1.setFirstName("Hannes")
@@ -47,7 +98,12 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
         customer1.getBillingAddress().setZipCode("28271")
         customer1.seteMail("wunder@pastillen.com")
         customer1.setPhoneNr("089/433284323-21")
-        customerService.saveOrUpdate(customer1)
+        user1.setCustomer(customer1)
+        userService.saveOrUpdate(user1)
+
+        User user2 = new User()
+        user2.setUsername("PreConfig2_User")
+        user2.setPassword("testpassword")
 
         Customer customer2 = new Customer()
         customer2.setFirstName("Robert")
@@ -60,7 +116,12 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
         customer2.getBillingAddress().setZipCode("98111")
         customer2.seteMail("r.mueller@gmx.me")
         customer2.setPhoneNr("09383/123-456 78")
-        customerService.saveOrUpdate(customer2)
+        user2.setCustomer(customer2)
+        userService.saveOrUpdate(user2)
+
+        User user3 = new User()
+        user3.setUsername("PreConfig3_User")
+        user3.setPassword("testpassword")
 
         Customer customer3 = new Customer()
         customer3.setFirstName("Aldi")
@@ -73,7 +134,8 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
         customer3.getBillingAddress().setZipCode("90931")
         customer3.seteMail("aldi@wachau.rocks")
         customer3.setPhoneNr("0911/983461")
-        customerService.saveOrUpdate(customer3)
+        user3.setCustomer(customer3)
+        userService.saveOrUpdate(user3)
     }
 
     void loadProducts() {

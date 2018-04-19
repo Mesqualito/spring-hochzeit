@@ -45,7 +45,7 @@ class ProductController {
         return "product/productform"
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     String saveOrUpdateProduct(Product Product) {
         Product savedProduct = productService.saveOrUpdate(Product)
         return "redirect:/product/show/" + savedProduct.getId()

@@ -3,14 +3,7 @@ package rocks.gebsattel.hochzeit.domain
 import javax.persistence.*
 
 @Entity
-class Cart implements DomainObject {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id
-
-    @Version
-    Integer version
+class Cart extends AbstractDomainClass implements DomainObject {
 
     @OneToOne
     User user

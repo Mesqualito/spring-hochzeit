@@ -3,14 +3,9 @@ package rocks.gebsattel.hochzeit.domain
 import javax.persistence.*
 
 @Entity
-class CartDetail implements DomainObject {
+class CartDetail extends AbstractDomainClass implements DomainObject {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id
-
-    @Version
-    Integer version
+    Integer quantity
 
     // many cartDetails fit on one cart
     @ManyToOne
@@ -21,14 +16,4 @@ class CartDetail implements DomainObject {
     // but products don't need a cart
     @OneToOne
     Product product
-
-    @Override
-    Integer getId(){
-        return id
-    }
-
-    @Override
-    void setId(Integer id){
-        this.id = id
-    }
 }
