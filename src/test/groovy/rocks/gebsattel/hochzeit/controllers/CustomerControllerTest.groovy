@@ -5,10 +5,12 @@ import org.junit.Test
 import org.mockito.*
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
+import rocks.gebsattel.hochzeit.domain.Address
 import rocks.gebsattel.hochzeit.domain.Customer
 import rocks.gebsattel.hochzeit.services.CustomerService
 
 import static org.hamcrest.Matchers.*
+import static org.hamcrest.beans.HasPropertyWithValue.hasProperty
 import static org.mockito.Mockito.*
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
@@ -98,11 +100,12 @@ class CustomerControllerTest {
         returnCustomer.setId(id)
         returnCustomer.setFirstName(firstName)
         returnCustomer.setLastName(lastName)
-        returnCustomer.setAddressLine1(addressLine1)
-        returnCustomer.setAddressLine2(addressLine2)
-        returnCustomer.setCity(city)
-        returnCustomer.setState(state)
-        returnCustomer.setZipCode(zipCode)
+        returnCustomer.setBillingAddress(new Address())
+        returnCustomer.getBillingAddress().setAddressLine1(addressLine1)
+        returnCustomer.getBillingAddress().setAddressLine2(addressLine2)
+        returnCustomer.getBillingAddress().setCity(city)
+        returnCustomer.getBillingAddress().setState(state)
+        returnCustomer.getBillingAddress().setZipCode(zipCode)
         returnCustomer.seteMail(eMail)
         returnCustomer.setPhoneNr(phoneNr)
 
@@ -124,11 +127,11 @@ class CustomerControllerTest {
         .andExpect(model().attribute("customer", instanceOf(Customer.class)))
         .andExpect(model().attribute("customer", hasProperty("firstName", is(firstName))))
                 .andExpect(model().attribute("customer", hasProperty("lastName", is(lastName))))
-                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine1", is(addressLine1))))
-                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine2", is(addressLine2))))
-                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("city", is(city))))
-                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("state", is(state))))
-                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("zipCode", is(zipCode))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine1", is(addressLine1)))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("addressLine2", is(addressLine2)))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("city", is(city)))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("state", is(state)))))
+                .andExpect(model().attribute("customer", hasProperty("shippingAddress", hasProperty("zipCode", is(zipCode)))))
                 .andExpect(model().attribute("customer", hasProperty("eMail", is(eMail))))
                 .andExpect(model().attribute("customer", hasProperty("phoneNr", is(phoneNr))))
 

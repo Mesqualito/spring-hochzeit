@@ -1,12 +1,6 @@
 package rocks.gebsattel.hochzeit.domain
 
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.MappedSuperclass
-import javax.persistence.PrePersist
-import javax.persistence.PreUpdate
-import javax.persistence.Version
+import javax.persistence.*
 
 // tells JPA, we will inherite properties from this class
 @MappedSuperclass
@@ -23,17 +17,18 @@ class AbstractDomainClass implements DomainObject {
     Date lastUpdated
 
     @Override
-    Integer getId(){ return this.id }
+    Integer getId() { return this.id }
 
     @Override
-    void setId(Integer id) { this.id = id}
+    void setId(Integer id) { this.id = id }
 
     @PreUpdate
     @PrePersist
-    void updateTimeStamps(){
-        if(dateCreated == null){
-            dateCreated = new Date()
-        }
+    void updateTimeStamps() {
         lastUpdated = new Date()
+        if (dateCreated == null) {
+            // dateCreated = lastUpdated.clone()
+            dateCreated = new Date(lastUpdated.getTime())
+        }
     }
 }
