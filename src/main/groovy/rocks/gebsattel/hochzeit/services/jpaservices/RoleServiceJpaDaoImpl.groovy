@@ -2,41 +2,36 @@ package rocks.gebsattel.hochzeit.services.jpaservices
 
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
-import rocks.gebsattel.hochzeit.domain.Order
-import rocks.gebsattel.hochzeit.services.OrderService
+import rocks.gebsattel.hochzeit.domain.security.Role
+import rocks.gebsattel.hochzeit.services.RoleService
 
 import javax.persistence.EntityManager
 
 @Service
 @Profile("jpadao")
-class OrderServiceJpaDaoImpl extends AbstractJpaDaoService implements OrderService {
+class RoleServiceJpaDaoImpl extends AbstractJpaDaoService implements RoleService {
 
     @Override
-    List<Order> listAll() {
+    List<?> listAll() {
         EntityManager em = emf.createEntityManager()
-        em.createQuery("FROM Order", Order.class).getResultList()
+        em.createQuery("FROM Role", Role.class).getResultList()
     }
 
     @Override
-    Order getById(Integer id) {
+    Role getById(Integer id) {
         EntityManager em = emf.createEntityManager()
-
-        em.getTransaction().begin()
-        Order savedProduct = em.merge(domainObject)
-        em.getTransaction().commit()
-
-        return savedProduct
+        em.find(Role.class, id)
     }
 
     @Override
-    Order saveOrUpdate(Order domainObject) {
+    Role saveOrUpdate(Role domainObject) {
         EntityManager em = emf.createEntityManager()
 
         em.getTransaction().begin()
-        Order savedProduct = em.merge(domainObject)
+        Role saveRole = em.merge(domainObject)
         em.getTransaction().commit()
 
-        return savedProduct
+        return saveRole
     }
 
     @Override
@@ -44,7 +39,7 @@ class OrderServiceJpaDaoImpl extends AbstractJpaDaoService implements OrderServi
         EntityManager em = emf.createEntityManager()
 
         em.getTransaction().begin()
-        em.remove(em.find(Order.class, id))
+        em.remove(em.find(Role.class, id))
         em.getTransaction().commit()
     }
 }

@@ -12,9 +12,11 @@ import rocks.gebsattel.hochzeit.domain.Order
 import rocks.gebsattel.hochzeit.domain.OrderDetail
 import rocks.gebsattel.hochzeit.domain.Product
 import rocks.gebsattel.hochzeit.domain.User
+import rocks.gebsattel.hochzeit.domain.security.Role
 import rocks.gebsattel.hochzeit.enums.OrderStatus
 import rocks.gebsattel.hochzeit.services.CustomerService
 import rocks.gebsattel.hochzeit.services.ProductService
+import rocks.gebsattel.hochzeit.services.RoleService
 import rocks.gebsattel.hochzeit.services.UserService
 
 // "Pull yourself up by your bootstraps" - what you do in the morning of the old days...
@@ -24,7 +26,8 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     ProductService productService
     UserService userService
-    CustomerService customerService
+    RoleService roleService
+
 
     @Autowired
     void setProductService(ProductService productService) {
@@ -37,8 +40,8 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     }
 
     @Autowired
-    void setCustomerService(CustomerService customerService) {
-        this.customerService = customerService
+    void setRoleService(RoleService roleService) {
+        this.roleService = roleService
     }
 
     @Override
@@ -47,6 +50,28 @@ class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
         loadUsersAndCustomers()
         loadCarts()
         loadOrderHistory()
+        loadRoles()
+        assignUsersToDefaultRole()
+    }
+
+    private void assignUsersToDefaultRole(){
+        List<Role> roles = (List<Role>) roleService.listAll()
+        List<User> users = (List<User>) userService.listAll()
+
+        roles.each { role ->
+            if(role.getRole().equalsIgnoreCase("CUSTOMER")){
+                users.each { user ->
+                    user.addRole(role)
+                    userService.saveOrUpdate(user)
+                }
+            }
+        }
+    }
+
+    private void loadRoles(){
+        Role role = new Role()
+        role.setRole("CUSTOMER")
+        roleService.saveOrUpdate(role)
     }
 
     private void loadOrderHistory(){
