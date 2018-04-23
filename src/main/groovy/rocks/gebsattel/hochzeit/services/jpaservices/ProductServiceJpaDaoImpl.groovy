@@ -8,7 +8,7 @@ import rocks.gebsattel.hochzeit.services.ProductService
 import javax.persistence.EntityManager
 
 @Service
-@Profile("jpadao-dont_use")
+@Profile("jpadao")
 class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductService {
 
     @Override

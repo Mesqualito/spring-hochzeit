@@ -4,9 +4,11 @@ import rocks.gebsattel.hochzeit.enums.OrderStatus
 
 import javax.persistence.CascadeType
 import javax.persistence.Embedded
+import javax.persistence.Entity
 import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 
+@Entity
 class Order extends AbstractDomainClass {
 
     @OneToOne

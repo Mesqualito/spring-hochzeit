@@ -8,7 +8,7 @@ import rocks.gebsattel.hochzeit.repositories.ProductRepository
 import rocks.gebsattel.hochzeit.services.ProductService
 
 @Service
-@Profile(["springdatajpa", "jpadao"])
+@Profile("springdatajpa")
 class ProductServiceRepoImpl implements ProductService {
 
     ProductRepository productRepository

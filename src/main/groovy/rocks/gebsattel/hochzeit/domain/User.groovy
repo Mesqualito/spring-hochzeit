@@ -24,7 +24,9 @@ class User extends AbstractDomainClass implements DomainObject {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     Cart cart
 
-    @ManyToMany
+    // fetch-Type, because of "failed to lazily initialize a collection of role:
+    // could not initialize proxy - no Session" => no session context for spring data jpa
+    @ManyToMany( fetch = FetchType.EAGER)
     @JoinTable
     // ~ defaults to @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "user_id"),
     //               inverseJoinColumns = @joinColumn(name = "role_id"))

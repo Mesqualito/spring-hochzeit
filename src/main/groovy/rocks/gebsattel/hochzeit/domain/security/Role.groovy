@@ -4,6 +4,7 @@ import rocks.gebsattel.hochzeit.domain.AbstractDomainClass
 import rocks.gebsattel.hochzeit.domain.User
 
 import javax.persistence.Entity
+import javax.persistence.FetchType
 import javax.persistence.JoinTable
 import javax.persistence.ManyToMany
 
@@ -14,7 +15,9 @@ class Role extends AbstractDomainClass {
 
     // bi-directional with a JoinTable
     // many Users can have many Roles, no cascading delete...
-    @ManyToMany
+    // fetch-Type, because of "failed to lazily initialize a collection of role:
+    // could not initialize proxy - no Session" => no session context for spring data jpa
+    @ManyToMany( fetch = FetchType.EAGER)
     @JoinTable
     // ~ defaults to @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "role_id"),
     //               inverseJoinColumns = @joinColumn(name = "user_id"))
