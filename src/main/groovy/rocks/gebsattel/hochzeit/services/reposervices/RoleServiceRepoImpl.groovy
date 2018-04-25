@@ -26,7 +26,7 @@ class RoleServiceRepoImpl implements RoleService {
     }
 
     @Override
-    Role getById(Integer id) { roleRepository.findById(id) }
+    Role getById(Integer id) { roleRepository.findById(id).get() }
 
     @Override
     Role saveOrUpdate(Role domainObject) { roleRepository.save(domainObject) }

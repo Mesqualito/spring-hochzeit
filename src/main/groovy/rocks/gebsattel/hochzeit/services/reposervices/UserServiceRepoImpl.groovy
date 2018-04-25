@@ -25,7 +25,7 @@ class UserServiceRepoImpl implements UserService {
     }
 
     @Override
-    User getById(Integer id) { userRepository.findById(id) }
+    User getById(Integer id) { userRepository.findById(id).get() }
 
     @Override
     User saveOrUpdate(User domainObject) { userRepository.save(domainObject) }

@@ -30,7 +30,7 @@ class ProductServiceRepoImpl implements ProductService {
     @Override
     Product getById(Integer id){
         // productRepository.findOne(id)
-        productRepository.findById(id)
+        productRepository.findById(id).get()
     }
 
     @Override

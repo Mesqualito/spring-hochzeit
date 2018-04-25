@@ -26,7 +26,7 @@ class OrderServiceRepoImpl implements OrderService {
     }
 
     @Override
-    Order getById(Integer id) { orderRepository.findById(id) }
+    Order getById(Integer id) { orderRepository.findById(id).get() }
 
     @Override
     Order saveOrUpdate(Order domainObject) { orderRepository.save(domainObject) }

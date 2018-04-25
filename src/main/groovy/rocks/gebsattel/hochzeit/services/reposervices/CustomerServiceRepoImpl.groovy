@@ -27,7 +27,7 @@ class CustomerServiceRepoImpl implements CustomerService {
     }
 
     @Override
-    Customer getById(Integer id) { customerRepository.findById(id) }
+    Customer getById(Integer id) { customerRepository.findById(id).get() }
 
     @Override
     Customer saveOrUpdate(Customer domainObject) { customerRepository.save(domainObject) }
