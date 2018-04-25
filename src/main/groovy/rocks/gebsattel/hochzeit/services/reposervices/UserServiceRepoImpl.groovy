@@ -31,5 +31,5 @@ class UserServiceRepoImpl implements UserService {
     User saveOrUpdate(User domainObject) { userRepository.save(domainObject) }
 
     @Override
-    void delete(Integer id) { userRepository.delete(id) }
+    void delete(Integer id) { userRepository.deleteById(id) }
 }

@@ -40,6 +40,6 @@ class ProductServiceRepoImpl implements ProductService {
 
     @Override
     void delete(Integer id) {
-        productRepository.delete(id)
+        productRepository.deleteById(id)
     }
 }

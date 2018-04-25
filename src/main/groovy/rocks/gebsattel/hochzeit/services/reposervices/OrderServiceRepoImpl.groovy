@@ -33,6 +33,6 @@ class OrderServiceRepoImpl implements OrderService {
 
     @Override
     void delete(Integer id) {
-        orderRepository.delete(id)
+        orderRepository.deleteById(id)
     }
 }
