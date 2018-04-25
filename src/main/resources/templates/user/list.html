@@ -30,9 +30,9 @@
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.customer.firstName}"></td>
                 <td th:text="${user.customer.lastName}"></td>
-                <td th:href="${'/user/show/' + user.id}">View</td>
-                <td th:href="${'/user/edit/' + user.id}">Edit</td>
-                <td th:href="${'/user/delete/' + user.id}">Delete</td>
+                <td><a th:href="${'/user/show/' + user.id}">View</a></td>
+                <td><a th:href="${'/user/edit/' + user.id}">Edit</a></td>
+                <td><a th:href="${'/user/delete/' + user.id}">Delete</a></td>
             </tr>
         </table>
     </div>

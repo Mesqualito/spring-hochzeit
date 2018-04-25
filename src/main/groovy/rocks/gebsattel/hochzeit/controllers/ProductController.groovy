@@ -22,7 +22,6 @@ class ProductController {
 
     @RequestMapping( ["/list","/"] )
     String listProducts(Model model) {
-        //...and will return the data from the model
         model.addAttribute("products", productService.listAll())
         return "product/list"
     }
