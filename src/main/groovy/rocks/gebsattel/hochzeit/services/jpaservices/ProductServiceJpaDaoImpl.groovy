@@ -1,7 +1,11 @@
 package rocks.gebsattel.hochzeit.services.jpaservices
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Service
+import rocks.gebsattel.hochzeit.commands.ProductForm
+import rocks.gebsattel.hochzeit.converters.ProductFormToProduct
+import rocks.gebsattel.hochzeit.converters.ProductToProductForm
 import rocks.gebsattel.hochzeit.domain.Product
 import rocks.gebsattel.hochzeit.services.ProductService
 
@@ -10,6 +14,13 @@ import javax.persistence.EntityManager
 @Service
 @Profile("jpadao")
 class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductService {
+
+    private ProductFormToProduct productFormToProduct
+
+    @Autowired
+    void setProductToProductForm(ProductToProductForm productToProductForm) {
+        this.productToProductForm = productFormToProduct
+    }
 
     @Override
     List<Product> listAll() {
@@ -30,6 +41,11 @@ class ProductServiceJpaDaoImpl extends AbstractJpaDaoService implements ProductS
         Product savedProduct = em.merge(domainObject) // merge() = persist() and "update()"
         em.getTransaction().commit()
         return savedProduct
+    }
+
+    @Override
+    Product saveOrUpdateProductForm(ProductForm productForm){
+        saveOrUpdate(productFormToProduct.convert(productForm))
     }
 
     @Override

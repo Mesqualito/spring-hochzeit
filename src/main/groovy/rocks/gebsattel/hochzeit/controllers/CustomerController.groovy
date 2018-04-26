@@ -1,13 +1,16 @@
 package rocks.gebsattel.hochzeit.controllers
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
+import org.springframework.validation.Validator
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import rocks.gebsattel.hochzeit.commands.CustomerForm
+import rocks.gebsattel.hochzeit.commands.validators.CustomerFormValidator
 import rocks.gebsattel.hochzeit.converters.CustomerFormToCustomer
 import rocks.gebsattel.hochzeit.converters.CustomerToCustomerForm
 import rocks.gebsattel.hochzeit.domain.Customer
@@ -22,6 +25,7 @@ class CustomerController {
     private CustomerService customerService
     private CustomerFormToCustomer customerFormToCustomer
     private CustomerToCustomerForm customerToCustomerForm
+    private Validator customerFormValidator
 
     @Autowired
     void setCustomerService(CustomerService customerService){ this.customerService = customerService }
@@ -34,6 +38,12 @@ class CustomerController {
     @Autowired
     void setCustomerToCustomerForm(CustomerToCustomerForm customerToCustomerForm){
         this.customerToCustomerForm = customerToCustomerForm
+    }
+
+    @Autowired
+    @Qualifier("customerFormValidator")
+    void setCustomerFormValidator(CustomerFormValidator customerFormValidator){
+        this.customerFormValidator = customerFormValidator
     }
 
     @RequestMapping( ["/list", "/"] )
@@ -62,6 +72,8 @@ class CustomerController {
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     String saveOrUpdate(@Valid CustomerForm customerForm, BindingResult bindingResult){
+
+        customerFormValidator.validate(customerForm, bindingResult)
 
         if(bindingResult.hasErrors()){
             return "customer/customerform"
