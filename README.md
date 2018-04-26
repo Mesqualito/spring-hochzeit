@@ -6,9 +6,7 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 ## contains
 <b>spring-mvc</b> for web applications, RESTful services and SOAP services
 
->Do you are going to marry and nevertheless want to learn spring?
-
->Do you want to participate? Write me an eMail!
+> How to look at githubs language heuristic stats: https://github.com/mesqualito/spring-marriage/search?l=groovy (also see .gitattribute)
 
 ### resources
 - Maven repository (https://mvnrepository.org/)
