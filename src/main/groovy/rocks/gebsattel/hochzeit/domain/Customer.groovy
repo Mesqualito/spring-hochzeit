@@ -20,4 +20,9 @@ class Customer extends AbstractDomainClass implements DomainObject {
     // database-Updates/Deletes driven primarily from the User-Object
     @OneToOne
     User user
+
+    // @Override
+    // Integer getId() {
+    //    return id;
+    // }
 }
