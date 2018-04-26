@@ -16,9 +16,7 @@ class Customer extends AbstractDomainClass implements DomainObject {
     @Embedded
     Address shippingAddress
 
-    // @OneToOne(cascade = CascadeType.ALL) // only if deletion of Customer should walk through and delete User also
-    // database-Updates/Deletes driven primarily from the User-Object
-    @OneToOne
+    @OneToOne(cascade = [ CascadeType.MERGE, CascadeType.PERSIST ])
     User user
 
     // @Override
