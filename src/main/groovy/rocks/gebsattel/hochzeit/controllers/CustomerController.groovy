@@ -3,6 +3,7 @@ package rocks.gebsattel.hochzeit.controllers
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -11,6 +12,8 @@ import rocks.gebsattel.hochzeit.converters.CustomerFormToCustomer
 import rocks.gebsattel.hochzeit.converters.CustomerToCustomerForm
 import rocks.gebsattel.hochzeit.domain.Customer
 import rocks.gebsattel.hochzeit.services.CustomerService
+
+import javax.validation.Valid
 
 @RequestMapping("/customer")
 @Controller
@@ -47,18 +50,23 @@ class CustomerController {
 
     @RequestMapping("/edit/{id}")
     String edit(@PathVariable Integer id, Model model){
-        model.addAttribute("customer", customerToCustomerForm.convert(customerService.getById(id)))
+        model.addAttribute("customerForm", customerService.getById(id))
         return "customer/customerform"
     }
 
     @RequestMapping("/new")
     String newCustomer(Model model){
-        model.addAttribute("customer", new CustomerForm())
+        model.addAttribute("customerForm", new CustomerForm())
         return "customer/customerform"
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    String saveOrUpdate(CustomerForm customerForm){
+    String saveOrUpdate(@Valid CustomerForm customerForm, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            return "customer/customerform"
+        }
+
         Customer newCustomer  = customerService.saveOrUpdateCustomerForm(customerForm)
         return "redirect:/customer/show/" + newCustomer.getId()
     }

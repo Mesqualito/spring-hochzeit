@@ -16,6 +16,7 @@
     <div>
         <form class="form-horizontal" th:object="${customerForm}" th:action="@{/customer/}" method="post">
             <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                <p>Errors:</p>
                 <ul>
                     <li th:each="err: ${#fields.errors('*')}" th:text="${err}">Validation Error</li>
                 </ul>
