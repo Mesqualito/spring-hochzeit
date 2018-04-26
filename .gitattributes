@@ -1,4 +1,2 @@
 
-* linguist-language=Groovy
-* linguist-vendored=Groovy
-src/* linguist-vendored
+*.rb linguist-language=Groovy
