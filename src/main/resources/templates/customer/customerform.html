@@ -16,7 +16,7 @@
     <div>
         <form class="form-horizontal" th:object="${customerForm}" th:action="@{/customer/}" method="post">
             <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-                <p>Please correct values in errors below:</p>
+                <p th:text="#{form.hasErrors}">[will be replaced with values from 'resources/message.properties']</p>
             </div>
             <input type="hidden" th:field="*{userId}"/>
             <input type="hidden" th:field="*{userVersion}"/>
