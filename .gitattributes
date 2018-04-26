@@ -1,3 +1,4 @@
 
 *.rb linguist-language=Groovy
 *.rb linguist-vendored=Groovy
+src/* linguist-vendored
