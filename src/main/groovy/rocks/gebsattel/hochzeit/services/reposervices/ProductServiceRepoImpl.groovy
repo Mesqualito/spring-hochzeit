@@ -58,23 +58,8 @@ class ProductServiceRepoImpl implements ProductService {
         productRepository.deleteById(id)
     }
 
-    // just to have an own github-Commit - to remember this step -
-    // I returned to the old code
     @Override
-    ProductForm saveOrUpdate(ProductForm productForm) {
-
-        if (productForm.getId() != null) { // existing product
-            Product productToUpdate = this.getById(productForm.getId())
-
-            productToUpdate.setVersion(productForm.getVersion())
-            productToUpdate.setDescription(productForm.getDescription())
-            productToUpdate.setPrice(productForm.getPrice())
-            productToUpdate.setImageUrl(productForm.getImageUrl())
-
-            return productToProductForm.convert(this.saveOrUpdate(productToUpdate))
-
-        } else { // product is new
-            return productToProductForm.convert(this.saveOrUpdate(productFormToProduct.convert(productForm)))
-        }
+    public Product saveOrUpdateProductForm(ProductForm productForm) {
+        return saveOrUpdate(productFormToProduct.convert(productForm));
     }
 }
