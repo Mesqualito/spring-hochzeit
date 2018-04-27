@@ -19,7 +19,7 @@ class ProductServiceRepoImpl implements ProductService {
     ProductFormToProduct productFormToProduct
 
     @Autowired
-    void setProductRepository(ProductRepository productRepository){
+    void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository
     }
 
@@ -29,7 +29,7 @@ class ProductServiceRepoImpl implements ProductService {
     }
 
     @Autowired
-    void setProductFormToProduct(ProductFormToProduct productFormToProduct){
+    void setProductFormToProduct(ProductFormToProduct productFormToProduct) {
         this.productFormToProduct = productFormToProduct
     }
 
@@ -38,12 +38,12 @@ class ProductServiceRepoImpl implements ProductService {
         List<Product> products = new ArrayList<>()
         // Java 8: Method references:
         // productRepository.findAll().forEach(products::add)
-        productRepository.findAll().each{ products.add(it) }
+        productRepository.findAll().each { products.add(it) }
         return products
     }
 
     @Override
-    Product getById(Integer id){
+    Product getById(Integer id) {
         // productRepository.findOne(id)
         productRepository.findById(id).get()
     }
@@ -54,13 +54,27 @@ class ProductServiceRepoImpl implements ProductService {
     }
 
     @Override
-    Product saveOrUpdateProductForm(ProductForm productForm){
-
-        saveOrUpdate(productFormToProduct.convert(productForm))
-    }
-
-    @Override
     void delete(Integer id) {
         productRepository.deleteById(id)
+    }
+
+    // just to have an own github-Commit - to remember this step -
+    // I returned to the old code
+    @Override
+    ProductForm saveOrUpdate(ProductForm productForm) {
+
+        if (productForm.getId() != null) { // existing product
+            Product productToUpdate = this.getById(productForm.getId())
+
+            productToUpdate.setVersion(productForm.getVersion())
+            productToUpdate.setDescription(productForm.getDescription())
+            productToUpdate.setPrice(productForm.getPrice())
+            productToUpdate.setImageUrl(productForm.getImageUrl())
+
+            return productToProductForm.convert(this.saveOrUpdate(productToUpdate))
+
+        } else { // product is new
+            return productToProductForm.convert(this.saveOrUpdate(productFormToProduct.convert(productForm)))
+        }
     }
 }
