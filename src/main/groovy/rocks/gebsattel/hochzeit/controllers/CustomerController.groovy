@@ -73,6 +73,7 @@ class CustomerController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     String saveOrUpdate(@Valid CustomerForm customerForm, BindingResult bindingResult){
 
+        // to check if password-String and pw-control-String match
         customerFormValidator.validate(customerForm, bindingResult)
 
         if(bindingResult.hasErrors()){
