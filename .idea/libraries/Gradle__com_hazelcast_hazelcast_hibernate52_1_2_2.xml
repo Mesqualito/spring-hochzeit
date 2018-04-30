@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: com.hazelcast:hazelcast-hibernate52:1.2.2">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/hazelcast/hazelcast-hibernate52/1.2.2/hazelcast-hibernate52-1.2.2.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

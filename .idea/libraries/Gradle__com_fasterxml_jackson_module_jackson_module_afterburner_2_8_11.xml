@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: com.fasterxml.jackson.module:jackson-module-afterburner:2.8.11">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-afterburner/2.8.11/jackson-module-afterburner-2.8.11.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

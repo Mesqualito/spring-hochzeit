@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.zalando:problem:0.20.1">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/zalando/problem/0.20.1/problem-0.20.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
