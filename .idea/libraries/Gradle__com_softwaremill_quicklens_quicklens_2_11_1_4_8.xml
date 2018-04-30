@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.softwaremill.quicklens:quicklens_2.11:1.4.8">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.softwaremill.quicklens/quicklens_2.11/1.4.8/21bdaeaff4d07bd257628cd257528600bbc985a2/quicklens_2.11-1.4.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.softwaremill.quicklens/quicklens_2.11/1.4.8/5cdfb16c00ca389cbc7401340103e05cd441e366/quicklens_2.11-1.4.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

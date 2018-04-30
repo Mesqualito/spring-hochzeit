@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.zalando:jackson-datatype-problem:0.20.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/zalando/jackson-datatype-problem/0.20.1/jackson-datatype-problem-0.20.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

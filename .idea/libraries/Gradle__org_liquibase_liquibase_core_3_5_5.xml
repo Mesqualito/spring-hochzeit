@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.liquibase:liquibase-core:3.5.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/liquibase/liquibase-core/3.5.5/liquibase-core-3.5.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
