@@ -1,0 +1,196 @@
+2018-04-30 22:27:23.414  INFO 9066 --- [restartedMain] rocks.gebsattel.WeddingApp               : The following profiles are active: swagger,dev
+2018-04-30 22:27:27.905 DEBUG 9066 --- [restartedMain] r.gebsattel.config.AsyncConfiguration    : Creating Async Task Executor
+2018-04-30 22:27:29.347 DEBUG 9066 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Registering JVM gauges
+2018-04-30 22:27:29.458 DEBUG 9066 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Monitoring the datasource
+2018-04-30 22:27:29.458 DEBUG 9066 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Initializing Metrics JMX reporting
+2018-04-30 22:27:31.125  WARN 9066 --- [restartedMain] org.elasticsearch.env                    : [Tattoo] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+2018-04-30 22:27:35.258 DEBUG 9066 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Configuring Hazelcast
+2018-04-30 22:27:35.299 DEBUG 9066 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Configuring Hazelcast clustering for instanceId: weddingApp
+2018-04-30 22:27:35.302 DEBUG 9066 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-04-30 22:27:35.490  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-04-30 22:27:35.885  INFO 9066 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-04-30 22:27:35.886  INFO 9066 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-04-30 22:27:36.286  INFO 9066 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-04-30 22:27:36.287  INFO 9066 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-04-30 22:27:36.761  INFO 9066 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-04-30 22:27:36.794  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:27:36.795  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:27:36.796  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:27:36.796  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:27:36.796  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:27:36.796  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-04-30 22:27:36.797  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:27:37.815  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:27:37.819  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-04-30 22:27:37.824  INFO 9066 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-04-30 22:27:37.831  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1525120057831 with initial instances count: 0
+2018-04-30 22:27:38.072  INFO 9066 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13781, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13781], bind any local is true
+2018-04-30 22:27:38.112  INFO 9066 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13781
+2018-04-30 22:27:38.113  INFO 9066 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-04-30 22:27:38.113  INFO 9066 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-04-30 22:27:38.569  INFO 9066 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13781 [dev] [3.9.1] Backpressure is disabled
+2018-04-30 22:27:39.255  INFO 9066 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13781 [dev] [3.9.1] Creating TcpIpJoiner
+2018-04-30 22:27:39.475  INFO 9066 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13781 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-04-30 22:27:39.476  INFO 9066 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13781 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-04-30 22:27:39.485  INFO 9066 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13781 [dev] [3.9.1] [127.0.0.1]:13781 is STARTING
+2018-04-30 22:27:39.515  INFO 9066 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Cluster version set to 3.9
+2018-04-30 22:27:39.516  INFO 9066 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13781 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13781 - 9ec1c169-a929-4eaf-bc21-9cb0a035c5e7 this
+]
+
+2018-04-30 22:27:39.551  INFO 9066 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13781 [dev] [3.9.1] [127.0.0.1]:13781 is STARTED
+2018-04-30 22:27:41.207  INFO 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Web application configuration, using profiles: swagger
+2018-04-30 22:27:41.207 DEBUG 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Initializing Metrics registries
+2018-04-30 22:27:41.214 DEBUG 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Registering Metrics Filter
+2018-04-30 22:27:41.215 DEBUG 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Registering Metrics Servlet
+2018-04-30 22:27:41.221 DEBUG 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Initialize H2 console
+2018-04-30 22:27:41.223  INFO 9066 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Web application fully configured
+2018-04-30 22:27:41.670 DEBUG 9066 --- [restartedMain] r.g.config.DatabaseConfiguration         : Configuring Liquibase
+2018-04-30 22:27:41.694  WARN 9066 --- [wedding-app-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-04-30 22:27:42.873  INFO 9066 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:665e9faf7e07985a605027b161d33e71 - Re-registering apps/WEDDINGAPP
+2018-04-30 22:27:42.873  INFO 9066 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:665e9faf7e07985a605027b161d33e71: registering service...
+2018-04-30 22:27:43.120  INFO 9066 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:665e9faf7e07985a605027b161d33e71 - registration status: 204
+2018-04-30 22:27:44.858  INFO 9066 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-04-30 22:27:44.863  INFO 9066 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [weddingApp].
+2018-04-30 22:27:45.140 DEBUG 9066 --- [wedding-app-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase has updated your database in 3444 ms
+2018-04-30 22:27:47.820  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:27:47.820  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:27:47.820  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:27:47.820  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:27:47.821  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:27:47.821  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-04-30 22:27:47.821  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:27:47.828  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:27:50.367 DEBUG 9066 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Starting HazelcastCacheManager
+2018-04-30 22:27:54.115  WARN 9066 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-04-30 22:27:54.135  WARN 9066 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-04-30 22:27:55.951 DEBUG 9066 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-04-30 22:27:55.967 DEBUG 9066 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 15 ms
+2018-04-30 22:27:58.655  INFO 9066 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1525120078655, current=UP, previous=STARTING]
+2018-04-30 22:27:58.786  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:27:58.787  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:27:58.787  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:27:58.787  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:27:58.787  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:27:58.787  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-04-30 22:27:58.788  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:27:58.795  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:27:59.123  INFO 9066 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:665e9faf7e07985a605027b161d33e71: registering service...
+2018-04-30 22:27:59.135  INFO 9066 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:665e9faf7e07985a605027b161d33e71 - registration status: 204
+2018-04-30 22:27:59.984  INFO 9066 --- [restartedMain] rocks.gebsattel.WeddingApp               : Started WeddingApp in 42.54 seconds (JVM running for 43.824)
+2018-04-30 22:27:59.985  INFO 9066 --- [restartedMain] rocks.gebsattel.WeddingApp               : 
+----------------------------------------------------------
+	Application 'weddingApp' is running! Access URLs:
+	Local: 		http://localhost:8080
+	External: 	http://10.0.29.152:8080
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-04-30 22:27:59.987  INFO 9066 --- [restartedMain] rocks.gebsattel.WeddingApp               : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
+2018-04-30 22:28:08.800  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:28:08.801  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:28:08.801  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:28:08.801  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:28:08.801  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:28:08.802  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-04-30 22:28:08.802  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:28:08.834  INFO 9066 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:32:36.811  INFO 9066 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-04-30 22:37:26.679  INFO 9150 --- [restartedMain] rocks.gebsattel.WeddingApp               : The following profiles are active: swagger,dev
+2018-04-30 22:37:30.424 DEBUG 9150 --- [restartedMain] r.gebsattel.config.AsyncConfiguration    : Creating Async Task Executor
+2018-04-30 22:37:31.647 DEBUG 9150 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Registering JVM gauges
+2018-04-30 22:37:31.737 DEBUG 9150 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Monitoring the datasource
+2018-04-30 22:37:31.738 DEBUG 9150 --- [restartedMain] r.gebsattel.config.MetricsConfiguration  : Initializing Metrics JMX reporting
+2018-04-30 22:37:33.193  WARN 9150 --- [restartedMain] org.elasticsearch.env                    : [High-Tech] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]
+2018-04-30 22:37:36.649 DEBUG 9150 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Configuring Hazelcast
+2018-04-30 22:37:36.696 DEBUG 9150 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Configuring Hazelcast clustering for instanceId: weddingApp
+2018-04-30 22:37:36.699 DEBUG 9150 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Application is running with the "dev" profile, Hazelcast cluster will only work with localhost instances
+2018-04-30 22:37:36.873  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2018-04-30 22:37:37.215  INFO 9150 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2018-04-30 22:37:37.217  INFO 9150 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2018-04-30 22:37:37.525  INFO 9150 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2018-04-30 22:37:37.528  INFO 9150 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2018-04-30 22:37:38.023  INFO 9150 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2018-04-30 22:37:38.059  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:37:38.060  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:37:38.061  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:37:38.068  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:37:38.068  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:37:38.068  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2018-04-30 22:37:38.069  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:37:38.346  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:37:38.348  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 5
+2018-04-30 22:37:38.356  INFO 9150 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 12
+2018-04-30 22:37:38.360  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1525120658360 with initial instances count: 0
+2018-04-30 22:37:38.552  INFO 9150 --- [restartedMain] com.hazelcast.instance.AddressPicker     : [LOCAL] [dev] [3.9.1] Picked [127.0.0.1]:13781, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=13781], bind any local is true
+2018-04-30 22:37:38.583  INFO 9150 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Hazelcast 3.9.1 (20171130 - feca534) starting at [127.0.0.1]:13781
+2018-04-30 22:37:38.584  INFO 9150 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
+2018-04-30 22:37:38.584  INFO 9150 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Configured Hazelcast Serialization version: 1
+2018-04-30 22:37:38.984  INFO 9150 --- [restartedMain] c.h.s.i.o.impl.BackpressureRegulator     : [127.0.0.1]:13781 [dev] [3.9.1] Backpressure is disabled
+2018-04-30 22:37:39.668  INFO 9150 --- [restartedMain] com.hazelcast.instance.Node              : [127.0.0.1]:13781 [dev] [3.9.1] Creating TcpIpJoiner
+2018-04-30 22:37:39.877  INFO 9150 --- [restartedMain] c.h.s.i.o.impl.OperationExecutorImpl     : [127.0.0.1]:13781 [dev] [3.9.1] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
+2018-04-30 22:37:39.879  INFO 9150 --- [restartedMain] c.h.internal.diagnostics.Diagnostics     : [127.0.0.1]:13781 [dev] [3.9.1] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2018-04-30 22:37:39.890  INFO 9150 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13781 [dev] [3.9.1] [127.0.0.1]:13781 is STARTING
+2018-04-30 22:37:39.920  INFO 9150 --- [restartedMain] com.hazelcast.system                     : [127.0.0.1]:13781 [dev] [3.9.1] Cluster version set to 3.9
+2018-04-30 22:37:39.921  INFO 9150 --- [restartedMain] c.h.internal.cluster.ClusterService      : [127.0.0.1]:13781 [dev] [3.9.1] 
+
+Members {size:1, ver:1} [
+	Member [127.0.0.1]:13781 - 636a3ca5-edca-4957-b156-074788a4c9d3 this
+]
+
+2018-04-30 22:37:39.957  INFO 9150 --- [restartedMain] com.hazelcast.core.LifecycleService      : [127.0.0.1]:13781 [dev] [3.9.1] [127.0.0.1]:13781 is STARTED
+2018-04-30 22:37:41.296  INFO 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Web application configuration, using profiles: swagger
+2018-04-30 22:37:41.296 DEBUG 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Initializing Metrics registries
+2018-04-30 22:37:41.303 DEBUG 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Registering Metrics Filter
+2018-04-30 22:37:41.304 DEBUG 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Registering Metrics Servlet
+2018-04-30 22:37:41.310 DEBUG 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Initialize H2 console
+2018-04-30 22:37:41.311  INFO 9150 --- [restartedMain] rocks.gebsattel.config.WebConfigurer     : Web application fully configured
+2018-04-30 22:37:41.778 DEBUG 9150 --- [restartedMain] r.g.config.DatabaseConfiguration         : Configuring Liquibase
+2018-04-30 22:37:41.792  WARN 9150 --- [wedding-app-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase asynchronously, your database might not be ready at startup!
+2018-04-30 22:37:43.374  INFO 9150 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:0a6fb87aa2a665684486c9529f96a46f - Re-registering apps/WEDDINGAPP
+2018-04-30 22:37:43.374  INFO 9150 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:0a6fb87aa2a665684486c9529f96a46f: registering service...
+2018-04-30 22:37:43.452  INFO 9150 --- [DiscoveryClient-HeartbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:0a6fb87aa2a665684486c9529f96a46f - registration status: 204
+2018-04-30 22:37:44.026  INFO 9150 --- [restartedMain] c.h.h.HazelcastCacheRegionFactory        : Starting up HazelcastCacheRegionFactory
+2018-04-30 22:37:44.029  INFO 9150 --- [restartedMain] c.h.h.i.IHazelcastInstanceFactory        : Using existing HazelcastInstance [weddingApp].
+2018-04-30 22:37:44.702 DEBUG 9150 --- [wedding-app-Executor-1] i.g.j.c.liquibase.AsyncSpringLiquibase   : Liquibase has updated your database in 2908 ms
+2018-04-30 22:37:48.351  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:37:48.351  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:37:48.351  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:37:48.352  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:37:48.352  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:37:48.352  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-04-30 22:37:48.352  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:37:48.358  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:37:48.721 DEBUG 9150 --- [restartedMain] r.gebsattel.config.CacheConfiguration    : Starting HazelcastCacheManager
+2018-04-30 22:37:52.477  WARN 9150 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-04-30 22:37:52.494  WARN 9150 --- [restartedMain] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2018-04-30 22:37:53.777 DEBUG 9150 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Starting Swagger
+2018-04-30 22:37:53.789 DEBUG 9150 --- [restartedMain] i.g.j.c.apidoc.SwaggerConfiguration      : Started Swagger in 11 ms
+2018-04-30 22:37:56.519  INFO 9150 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1525120676519, current=UP, previous=STARTING]
+2018-04-30 22:37:56.923  INFO 9150 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:0a6fb87aa2a665684486c9529f96a46f: registering service...
+2018-04-30 22:37:56.939  INFO 9150 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WEDDINGAPP/weddingApp:0a6fb87aa2a665684486c9529f96a46f - registration status: 204
+2018-04-30 22:37:57.776  INFO 9150 --- [restartedMain] rocks.gebsattel.WeddingApp               : Started WeddingApp in 36.467 seconds (JVM running for 37.605)
+2018-04-30 22:37:57.777  INFO 9150 --- [restartedMain] rocks.gebsattel.WeddingApp               : 
+----------------------------------------------------------
+	Application 'weddingApp' is running! Access URLs:
+	Local: 		http://localhost:8080
+	External: 	http://10.0.29.152:8080
+	Profile(s): 	[swagger, dev]
+----------------------------------------------------------
+2018-04-30 22:37:57.778  INFO 9150 --- [restartedMain] rocks.gebsattel.WeddingApp               : 
+----------------------------------------------------------
+	Config Server: 	Connected to the JHipster Registry config server!
+----------------------------------------------------------
+2018-04-30 22:38:00.292  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2018-04-30 22:38:00.292  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2018-04-30 22:38:00.293  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2018-04-30 22:38:00.293  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2018-04-30 22:38:00.293  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2018-04-30 22:38:00.293  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2018-04-30 22:38:00.293  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2018-04-30 22:38:00.314  INFO 9150 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2018-04-30 22:42:38.079  INFO 9150 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
