@@ -11,8 +11,8 @@ First spring-application with gradle and groovy, based on the lessons from Sprin
 ### resources
 - Maven repository (https://mvnrepository.org/)
 - Webjars (https://www.webjars.org/)
-- https://github.com/mraible/jhipster4-demo#what-is-jhipster
-- https://stackoverflow.com/questions/tagged/jhipster
+- JHipster https://github.com/mraible/jhipster4-demo
+- JHipster help https://stackoverflow.com/questions/tagged/jhipster
 
 ### linked projects
 - Learning groovy (https://github.com/Mesqualito/groovy-learning)
